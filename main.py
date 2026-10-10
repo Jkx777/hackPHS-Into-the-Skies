@@ -10,7 +10,7 @@ date = st.date_input("Enter Date: ")
 def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
-    if r["status"] != 404:
+    if NewUrl["status"] != 404:
         r.raise_for_status()
         return r.json()
     else:
