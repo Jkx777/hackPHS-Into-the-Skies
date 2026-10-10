@@ -8,13 +8,15 @@ date = st.date_input("Enter Date: ")
 
 #Get info=========================================
 def fetch_info(date):
+    comfirm = request.get(f"{url}")
+    comfirm.raise_for_status()
+    comfirm.json()
+
+    st.write(comfirm)
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
-    if NewUrl["status"] != 404:
-        r.raise_for_status()
-        return r.json()
-    else:
-        return False
+    r.raise_for_status()
+    return r.json()
 
 result = fetch_info(date)
 
