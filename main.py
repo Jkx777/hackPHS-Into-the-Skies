@@ -8,7 +8,7 @@ date = st.date_input("Enter Date: ")
 
 #Get info=========================================
 def fetch_info(date):
-    comfirm = request.get(f"{url}")
+    comfirm = requests.get(f"{url}")
     comfirm.raise_for_status()
     comfirm.json()
 
