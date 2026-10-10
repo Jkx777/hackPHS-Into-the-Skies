@@ -14,7 +14,7 @@ def fetch_info(date):
     
     for i in range(len(full)):#             |
         dictionary = full[i]#               |
-        st.write(dictionary)
+        st.write(len(full))
         if date in dictionary.values():#|
             NewUrl = url + "/" + str(date).replace("-", "")[2:]
             r = requests.get(f"{NewUrl}")
