@@ -10,9 +10,11 @@ date = st.date_input("Enter Date: ")
 def fetch_info(date):
     comfirm = requests.get(f"{url}")#   \
     comfirm.raise_for_status()#          |  check later
-    st.write(comfirm.json())#           /
+    full = comfirm.json()#              /
     
-
+    if date in full:
+        st.write("found")
+        
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
     r.raise_for_status()
