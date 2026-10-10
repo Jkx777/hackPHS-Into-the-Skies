@@ -12,16 +12,23 @@ def fetch_info(date):
     comfirm.raise_for_status()#          |  check later
     full = comfirm.json()#              /
     
-    if date in full:
-        st.write("found")
-        
-    NewUrl = url + "/" + str(date).replace("-", "")[2:]
-    r = requests.get(f"{NewUrl}")
-    r.raise_for_status()
-    return r.json()
-
+    for i in range(len(full)):#             |
+        dictionary = full[i]#               |
+            if date in dictionary.values():#|
+                NewUrl = url + "/" + str(date).replace("-", "")[2:]
+                r = requests.get(f"{NewUrl}")
+                r.raise_for_status()
+                return r.json()
+                break
+            else:
+                return "None"
+                break
+       
 result = fetch_info(date)
 
 #display=========================================
-st.write(result)
-st.write(result["title"])
+if result == "None":
+    st.write("Please choose a different date")
+else:
+    st.write(result)
+    st.write(result["title"])
