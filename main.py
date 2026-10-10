@@ -9,7 +9,7 @@ def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
     st.write(r)
-    if r == <Response [200]>:
+    if r == 200:
         r.raise_for_status()
         return r.json()
     else:
