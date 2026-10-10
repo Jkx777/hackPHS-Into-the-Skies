@@ -11,6 +11,6 @@ def fetch_info(date):
     r.raise_for_status()
     return r.json()
 
-st.write(url)
 result = fetch_info(date)
+st.write(result)
 st.write(result["title"])
