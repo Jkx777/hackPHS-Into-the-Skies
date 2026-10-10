@@ -9,8 +9,11 @@ def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
     st.write(r)
-    r.raise_for_status()
-    return r.json()
+    if r == "<Response [200]>":
+        r.raise_for_status()
+        return r.json()
+    else:
+        return False
 
 result = fetch_info(date)
 st.write(result)
