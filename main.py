@@ -7,7 +7,7 @@ date = st.date_input("Enter Date: ")
 
 def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
-    r = request.get(f"{NewUrl}")
+    r = requests.get(f"{NewUrl}")
     r.raise_for_status()
     return r.json()
 
