@@ -1,5 +1,5 @@
 import streamlit
-import request
+import requests
 import datetime
 
 url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
