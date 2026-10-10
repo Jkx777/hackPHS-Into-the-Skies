@@ -16,5 +16,6 @@ def fetch_info(date):
 result = fetch_info(date)
 
 #display=========================================
-st.write(result)
 st.write(result["title"])
+
+#st.write(result)
