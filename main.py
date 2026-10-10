@@ -12,4 +12,4 @@ def fetch_info(date):
     return r.json()
 
 result = fetch_info(date)
-st.write(result)
+st.write(result["title"])
