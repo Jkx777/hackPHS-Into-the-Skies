@@ -14,6 +14,7 @@ def fetch_info(date):
     return r.json()
 
 result = fetch_info(date)
+st.write(result)
 
 #display=========================================
 st.write(result["title"])
