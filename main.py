@@ -19,7 +19,12 @@ result = fetch_info(date)
 
 #display=========================================
 st.subheader(result["title"])
-st.image(result["hdurl"])
-st.html(result["explanation"])
+image, info = st.columns(2)
+
+with image:
+    st.image(result["hdurl"])
+
+with info:
+    st.html(result["explanation"])
 
 
