@@ -38,4 +38,4 @@ else:
         st.image(result["hdurl"])
 
     with info:
-        st.html(result["explanation"])
+        st.write(str(st.html(result["explanation"])))
