@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import datetime
 
+st.title("Into the Skies")
 #input=========================================
 url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
 date = st.date_input("Enter Date: ")
@@ -14,9 +15,11 @@ def fetch_info(date):
     return r.json()
 
 result = fetch_info(date)
-st.write(result)
+#st.write(result)
 
 #display=========================================
 st.title(result["title"])
 st.image(result["hdurl"])
 st.html(result["explanation"])
+
+
