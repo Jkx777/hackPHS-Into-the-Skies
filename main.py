@@ -18,7 +18,7 @@ def fetch_info(date):
     return r.json()
 
 result = fetch_info(date)
-#st.write(result)
+st.write(result)
 
 #display=========================================
 st.subheader(result["title"])
@@ -29,5 +29,3 @@ with image:
 
 with info:
     st.html(result["explanation"])
-
-
