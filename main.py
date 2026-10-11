@@ -4,7 +4,7 @@ import datetime
 st.set_page_config(layout="wide")
 
 st.title("Into the Skies")
-st.write("========================================================================")
+st.write("================================================================================================================================================")
 #input=========================================
 url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
 date = st.date_input("Enter Date: ")
