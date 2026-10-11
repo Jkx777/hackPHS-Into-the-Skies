@@ -24,7 +24,7 @@ result = fetch_info(date)
 
 #display=========================================
 if result == False:
-    col1, col2, col3 = st.columns([1, 20, 1])  # middle column is widest
+    col1, col2, col3 = st.columns([10, 20, 10])  # middle column is widest
 
     with col2:
         st.subheader("Please enter a different date.")
