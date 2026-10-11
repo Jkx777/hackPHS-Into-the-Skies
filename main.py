@@ -14,18 +14,22 @@ date = st.date_input("Enter Date: ")
 def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
-    r.raise_for_status()
-    return r.json()
+    if r.raise_for_status() == 200:
+        return r.json()
+    else:
+        return false
 
 result = fetch_info(date)
-st.write(result)
 
 #display=========================================
-st.subheader(result["title"])
-image, info = st.columns(2)
+if result == false:
+    st.subheader("Enter a different date")
+else:
+    st.subheader(result["title"])
+    image, info = st.columns(2)
 
-with image:
-    st.image(result["hdurl"])
+    with image:
+        st.image(result["hdurl"])
 
-with info:
-    st.html(result["explanation"])
+    with info:
+        st.html(result["explanation"])
