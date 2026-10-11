@@ -18,6 +18,4 @@ st.write(result)
 
 #display=========================================
 st.write(result["title"])
-st.image(result["media_type"]["image"])
-
-#st.write(result)
+st.image(result["hdurl"])
