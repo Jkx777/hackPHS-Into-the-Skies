@@ -18,6 +18,6 @@ st.write(result)
 
 #display=========================================
 st.write(result["title"])
-st.image(result["media_type"])
+st.image(result["media_type"]["image"])
 
 #st.write(result)
