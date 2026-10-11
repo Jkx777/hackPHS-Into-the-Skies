@@ -17,12 +17,12 @@ def fetch_info(date):
     if r.raise_for_status() == 200:
         return r.json()
     else:
-        return false
+        return False
 
 result = fetch_info(date)
 
 #display=========================================
-if result == false:
+if result == False:
     st.subheader("Enter a different date")
 else:
     st.subheader(result["title"])
