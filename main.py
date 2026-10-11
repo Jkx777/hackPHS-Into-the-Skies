@@ -17,5 +17,6 @@ result = fetch_info(date)
 
 #display=========================================
 st.write(result["title"])
+st.image(result["image"])
 
 #st.write(result)
