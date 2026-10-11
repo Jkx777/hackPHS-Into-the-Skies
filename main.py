@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import datetime
+st.set_page_config(layout="wide")
 
 st.title("Into the Skies")
 #input=========================================
