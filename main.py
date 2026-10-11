@@ -14,7 +14,9 @@ date = st.date_input("Enter Date: ")
 def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
-    if r.raise_for_status() == 200:
+    status = r.raise_for_status()
+    st.write(status)
+    if status == 200:
         return r.json()
     else:
         return False
