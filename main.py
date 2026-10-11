@@ -18,7 +18,7 @@ result = fetch_info(date)
 #st.write(result)
 
 #display=========================================
-st.title(result["title"])
+st.header(result["title"])
 st.image(result["hdurl"])
 st.html(result["explanation"])
 
