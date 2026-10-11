@@ -14,7 +14,6 @@ date = st.date_input("Enter Date: ")
 def fetch_info(date):
     NewUrl = url + "/" + str(date).replace("-", "")[2:]
     r = requests.get(f"{NewUrl}")
-    
     if r.status_code == 200:
         r.raise_for_status()
         return r.json()
@@ -25,7 +24,10 @@ result = fetch_info(date)
 
 #display=========================================
 if result == False:
-    st.subheader("Enter a different date")
+    col1, col2, col3 = st.columns()  # middle column is widest
+
+    with col2:
+        st.subheader("Please enter a different date.")
 else:
     st.subheader(result["title"])
     image, info = st.columns(2)
